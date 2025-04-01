@@ -8,19 +8,18 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Set up conditionally loaded plugins
+let cartographerPlugin: any[] = [];
+if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
+  cartographerPlugin = [require("@replit/vite-plugin-cartographer").cartographer()];
+}
+
 export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
-      : []),
+    ...cartographerPlugin,
   ],
   resolve: {
     alias: {
@@ -31,7 +30,6 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    // Adjust the output directory to 'client/dist'
     outDir: path.resolve(__dirname, "client", "dist"),
     emptyOutDir: true,
   },
