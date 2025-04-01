@@ -1,6 +1,9 @@
 import OpenAI from "openai";
 import { z } from "zod";
 import { TaskPriority } from "@shared/schema";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // Initialize OpenAI client with Groq API endpoint
 const groqClient = new OpenAI({
