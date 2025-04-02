@@ -255,14 +255,14 @@ const DashboardAIAssistant: React.FC<DashboardAIAssistantProps> = ({ onTasksAdde
       <div className="p-3 border-b border-gray-200">
         <h2 className="text-lg font-semibold flex items-center">
           <SendHorizontal className="h-5 w-5 mr-2 text-accent" />
-          AI Assistant
+          ENSPYR AI Task Manager
         </h2>
       </div>
       
       <div className="flex-1 overflow-y-auto p-3 space-y-3" id="dashboardChatMessages">
         {messages.length === 0 ? (
           <div className="text-center text-gray-500 py-5">
-            <p>Welcome to the AI Assistant.</p>
+            <p>Welcome to the Task Manager.</p>
             <p className="text-sm mt-2">Send a message to extract tasks from your text.</p>
           </div>
         ) : (
