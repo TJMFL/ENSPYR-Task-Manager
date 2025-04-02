@@ -27,7 +27,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
           <p className="text-sm">{content}</p>
         </div>
         <div className="ml-3 flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-white">
-          TJ
+          Brock
         </div>
       </div>
     );
