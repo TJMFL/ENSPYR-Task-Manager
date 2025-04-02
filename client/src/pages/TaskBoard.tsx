@@ -134,7 +134,7 @@ const TaskBoard: React.FC = () => {
     <div 
       className="p-6 min-h-screen bg-cover bg-center"
       style={{ 
-        backgroundImage: "url('https://img.freepik.com/free-vector/colorful-paper-cut-abstract-background_474888-6395.jpg?t=st=1743589624~exp=1743593224~hmac=2c57dfe8ef8208d16fb0332ea8079d95a0c12804e9adc48df03ccbc4052853ce&w=1380')" 
+        backgroundImage: "url('https://img.freepik.com/free-photo/cyberpunk-neon-tunnel-with-blue-pink-glowing-lights_23-2151966357.jpg?t=st=1743615797~exp=1743619397~hmac=019e3ed73ceb1b8c3a8ebac35586cccd3ec8437608f82bb6581aa2c929bffd1c&w=1060')" 
       }}
     >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
