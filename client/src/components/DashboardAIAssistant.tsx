@@ -251,9 +251,9 @@ const DashboardAIAssistant: React.FC<DashboardAIAssistantProps> = ({ onTasksAdde
   };
 
   return (
-    <div className="bg-white rounded-lg shadow flex flex-col" style={{ height: "450px" }}>
+    <div className="bg-blue-200 rounded-lg bg-opacity-50 shadow flex flex-col" style={{ height: "550px" }}>
       <div className="p-3 border-b border-gray-200">
-        <h2 className="text-lg font-semibold flex items-center">
+        <h2 className="text-lg font-bold flex items-center">
           <SendHorizontal className="h-5 w-5 mr-2 text-accent" />
           ENSPYR AI Task Manager
         </h2>

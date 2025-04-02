@@ -22,7 +22,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onClick, onDelete, className,
       case TaskPriority.HIGH:
         return 'border-red-500';
       case TaskPriority.MEDIUM:
-        return 'border-amber-500';
+        return 'border-amber-400';
       case TaskPriority.LOW:
         return 'border-blue-500';
       default:

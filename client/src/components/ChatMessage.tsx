@@ -23,11 +23,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   if (role === 'user') {
     return (
       <div className="flex items-start justify-end">
-        <div className="bg-primary text-white rounded-lg py-3 px-4 max-w-md">
+        <div className="bg-blue-900 text-white rounded-lg py-3 px-4 max-w-md">
           <p className="text-sm">{content}</p>
         </div>
-        <div className="ml-3 flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center text-white">
-          Brock
+        <div className="ml-3 flex-shrink-0 h-10 w-10 rounded-full bg-blue-300 flex items-center justify-center text-black">
+          TJ
         </div>
       </div>
     );

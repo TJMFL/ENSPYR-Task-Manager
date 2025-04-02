@@ -131,7 +131,12 @@ const TaskBoard: React.FC = () => {
   }
 
   return (
-    <div className="p-6">
+    <div 
+      className="p-6 min-h-screen bg-cover bg-center"
+      style={{ 
+        backgroundImage: "url('https://img.freepik.com/free-vector/colorful-paper-cut-abstract-background_474888-6395.jpg?t=st=1743589624~exp=1743593224~hmac=2c57dfe8ef8208d16fb0332ea8079d95a0c12804e9adc48df03ccbc4052853ce&w=1380')" 
+      }}
+    >
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <h1 className="text-2xl font-bold mb-2 md:mb-0">Task Board</h1>
         <div className="flex gap-2">
@@ -171,7 +176,7 @@ const TaskBoard: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
+      <div className="bg-white/90 bg-opacity-80 rounded-lg shadow p-5">
         <DragDropContext onDragEnd={handleDragEnd}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <TaskColumn 

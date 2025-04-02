@@ -1,4 +1,10 @@
 var __defProp = Object.defineProperty;
+var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+  get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+}) : x)(function(x) {
+  if (typeof require !== "undefined") return require.apply(this, arguments);
+  throw Error('Dynamic require of "' + x + '" is not supported');
+});
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
@@ -507,16 +513,16 @@ import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { fileURLToPath } from "url";
 var __filename = fileURLToPath(import.meta.url);
 var __dirname = dirname(__filename);
+var cartographerPlugin = [];
+if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== void 0) {
+  cartographerPlugin = [__require("@replit/vite-plugin-cartographer").cartographer()];
+}
 var vite_config_default = defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
-    ...process.env.NODE_ENV !== "production" && process.env.REPL_ID !== void 0 ? [
-      await import("@replit/vite-plugin-cartographer").then(
-        (m) => m.cartographer()
-      )
-    ] : []
+    ...cartographerPlugin
   ],
   resolve: {
     alias: {
@@ -527,8 +533,7 @@ var vite_config_default = defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    // Adjust the output directory to 'client/dist'
-    outDir: path.resolve(__dirname, "client", "dist"),
+    outDir: path.resolve(__dirname, "../server/public"),
     emptyOutDir: true
   }
 });
